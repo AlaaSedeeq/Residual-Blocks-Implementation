@@ -1,13 +1,13 @@
 <h1 align="center">Residual Blocks</h1><br>
 
-We can define Neural networks as `Universal function approximators` ($ F(X) = X $) and the accuracy increases with increasing the number of layers. 
+We can define Neural networks as `Universal function approximators` **F(X) = X** and the accuracy increases with increasing the number of layers. 
 
 But increasing the number of layers return some problems like `vanishing and exploding gradients` and `the curse of dimensionality`, also the accuracy will saturate at one point and eventually degrade. 
 
 If we have sufficiently deep networks, it may not be able to learn even a simple functions like an identity function.
 
 
-<img src="images/Single Residual Block.png"></img>
+<img src="images/Single Residual Block.png" align="center"></img>
 
 The idea behind the above block is, instead of hoping each few stacked layers directly fit a desired underlying mapping say **\(H(x)\)**, we explicitly let these layers fit a residual mapping i.e.. **\(F(x) = H(x) - x\)**. Thus original mapping **\(H(x)\)** becomes **\(F(x) + x\)**.
 
@@ -33,7 +33,7 @@ The deeper neural networks are constructed by stacking more layers on one anothe
 
 ### Residual Block
 
-<img src="images/WideResidualNetwork.png"></img>
+<img src="images/WideResidualNetwork.png" align="center"></img>
 
 <h3>I'm goinng to implment Basic and Bottleneck Residual blocks only:</h3><br>
     
@@ -56,7 +56,7 @@ The whole block is called one block (layer), which is consists of multiple layer
 
   
 ### Types of Residual Block
-<img src="images/Types of Residual Block.png" height="300" width="700">
+<img src="images/Types of Residual Block.png" height="300" width="700" align="center">
   
 ### Types of  shortcut connections residual neural network
 
@@ -64,7 +64,7 @@ The shortcut connections of a residual neural network can be:
 - **An identity block**, which is employed when the input and output have the same dimensions. 
 - **A Projection block**, which is a convolution block, used when the dimensions are different, it offers a channel-wise pooling, often called feature map pooling or a projection layer.
 
-<img src="images/The shortcut connections of ResNet.jpg" height="500" width="500"></img>
+<img src="images/The shortcut connections of ResNet.jpg" height="500" width="500" align="center"></img>
 
 <a href="https://www.researchgate.net/publication/339109948_Deep_Residual_Learning_for_Nonlinear_Regression/figures?lo=1">Deep Residual Learning for Nonlinear Regression</a>
 
