@@ -1,6 +1,7 @@
 import torch 
 import torch.nn as nn
 import torch.nn .functional as F
+from utils import conv1x1, conv3x3
 
 
 class BasicBlock(nn.Module):
