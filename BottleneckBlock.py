@@ -9,7 +9,7 @@ class BottleneckBlock(nn.Module):
     def __init__(
         self, 
         channel_size, 
-        shortcut: str = "identity",
+        shortcut_method: str = "identity",
         stride: int = 1
     )-> None:
         
@@ -31,7 +31,7 @@ class BottleneckBlock(nn.Module):
         self.BN3 = nn.BatchNorm2d(channel_size)
         
         # for projection short-cut (same input(x) channels, and downsampling it to channel_size)
-        self.shortcut = shortcut 
+        self.shortcut_method = shortcut_method 
         self.shortcut = conv1x1(channel_size, channel_size, stride=stride)
         # activation function
         self.relu = nn.ReLU(inplace=True)
@@ -42,10 +42,10 @@ class BottleneckBlock(nn.Module):
     ) -> Tensor:
         # shortcut path may be identity short-cut or projection short-cut
         # identity short-cut
-        if self.shortcut.lower()=='identity':
+        if self.shortcut_method.lower()=='identity':
             shortcut = x
             
-        elif self.shortcut.lower()=='projection':
+        elif self.shortcut_method.lower()=='projection':
             # projection short-cut
             shortcut = self.shortcut(x)
         
