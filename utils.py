@@ -5,7 +5,7 @@ import torch.nn .functional as F
 
 def conv3x3(in_channels: int,
             out_channels: int,
-            padding:int,
+            padding: int = 1,
             stride: int = 1):
     """
     3x3 convolution with padding for Basic Block
@@ -22,6 +22,7 @@ def conv3x3(in_channels: int,
 
 def conv1x1(in_channels: int,
             out_channels: int,
+            padding: int = 1,
             stride: int = 1):
     """
     1x1 convolution (channel-wise pooling) for Bottleneck Block 
@@ -34,6 +35,7 @@ def conv1x1(in_channels: int,
     return nn.Conv2d(
         in_channels,
         out_channels, # number of kernels
+        padding=padding,
         kernel_size=1, # 1x1
         stride=stride, 
         bias=False
