@@ -3,7 +3,8 @@ import torch.nn as nn
 import torch.nn .functional as F
 
 
-class BasicBlock(nn.Module):    
+class BasicBlock(nn.Module):
+    
     def __init__(self, 
                  channel_size,
                  shortcut: str = "identity",
@@ -11,7 +12,7 @@ class BasicBlock(nn.Module):
         
         super(BasicBlock, self).__init__()
         # first layer
-        self.conv1 = conv3x3(in_channel_size, channel_size, stride=stride, padding=1)
+        self.conv1 = conv3x3(channel_size, channel_size, stride=stride, padding=1)
         # BatchNorm is an element-wise operation and therefore, it does not change the size of our volume.
         self.BN1 = nn.BatchNorm2d(channel_size) 
         
@@ -22,7 +23,7 @@ class BasicBlock(nn.Module):
         
         # for projection short-cut (same input(x) channels, and downsampling it to channel_size)
         self.shortcut = shortcut
-        self.shortcut = conv1x1(channel_size, channel_size, kernel_size=1, stride=stride)
+        self.shortcut = conv1x1(channel_size, channel_size, stride=stride)
         # activation function
         self.relu = nn.ReLU(inplace=True)
     
