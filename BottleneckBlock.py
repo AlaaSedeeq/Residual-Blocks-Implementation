@@ -16,7 +16,7 @@ class BottleneckBlock(nn.Module):
         super(BottleneckBlock, self).__init__()
         
         # first layer
-        self.conv1 = conv1x1(in_channel_size, channel_size, stride=stride, padding=1)
+        self.conv1 = conv1x1(channel_size, channel_size, stride=stride, padding=1)
         # BatchNorm is an element-wise operation and therefore, it does not change the size of our volume.
         self.BN1 = nn.BatchNorm2d(channel_size) 
         
@@ -32,7 +32,7 @@ class BottleneckBlock(nn.Module):
         
         # for projection short-cut (same input(x) channels, and downsampling it to channel_size)
         self.shortcut = shortcut 
-        self.shortcut = conv1x1(in_channel_size, channel_size, stride=stride)
+        self.shortcut = conv1x1(channel_size, channel_size, stride=stride)
         # activation function
         self.relu = nn.ReLU(inplace=True)
         
