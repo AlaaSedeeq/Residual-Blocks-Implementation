@@ -29,4 +29,44 @@ The deeper neural networks are constructed by stacking more layers on one anothe
 
 <a href="https://arxiv.org/abs/1512.03385">Paper</a><br>
 <a href="https://swethatanamala.github.io/2018/07/09/Summary-of-resnet-paper/">Paper Summary</a><br>
+
+
+### Residual Block
+
+<img src="images/WideResidualNetwork.png"></img>
+
+<h3>I'm goinng to implment Basic and Bottleneck Residual blocks only:</h3><br>
+    
+<li> <b>Basic Block</b>: Includes 2 operations:
+    <ul>
+        <li> 3x3 convolution with padding followed by BatchNorm and ReLU.
+        <li> 3x3 convolution with padding followed by BatchNorm.
+    </ul>
+
+<li> <b>Bottleneck Block</b>: include 3 operations:
+    <ul>
+        <li> 1x1 convolution followed by BatchNorm and ReLU.
+        <li> 3x3 convolution with stride followed by BatchNorm and ReLU.
+        <li> 1x1 convolution followed by BatchNorm.
+    </ul>
+    
+  
+The whole block is called one block (layer), which is consists of multiple layers (Conv, BN, ReLU).
 <a href="https://towardsdatascience.com/residual-blocks-building-blocks-of-resnet-fd90ca15d6ec">Residual blocks building blocks of Resnet</a><br>
+
+  
+### Types of Residual Block
+<img src="images/Types of Residual Block.png" height="300" width="700">
+  
+### Types of  shortcut connections residual neural network
+
+The shortcut connections of a residual neural network can be:
+- **An identity block**, which is employed when the input and output have the same dimensions. 
+- **A Projection block**, which is a convolution block, used when the dimensions are different, it offers a channel-wise pooling, often called feature map pooling or a projection layer.
+
+<img src="images/The shortcut connections of ResNet.jpg" height="500" width="500"></img>
+
+<a href="https://www.researchgate.net/publication/339109948_Deep_Residual_Learning_for_Nonlinear_Regression/figures?lo=1">Deep Residual Learning for Nonlinear Regression</a>
+
+
+> #### I'm goinng to implement the `original` architecture of `Basic Block` & `Bottleneck Block` with both Identity and Projection short-cut connection.
