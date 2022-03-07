@@ -1,7 +1,6 @@
 <h1 align="center">Residual Blocks</h1><br>
 
-We can define Neural networks as `Universal function approximators` **F(X) = X** and the accuracy increases with increasing the number of layers. 
-
+We can define Neural networks as `Universal function approximators` **F(X) = X** and the accuracy increases with increasing the number of layers.<br>
 But increasing the number of layers return some problems like `vanishing and exploding gradients` and `the curse of dimensionality`, also the accuracy will saturate at one point and eventually degrade. 
 
 If we have sufficiently deep networks, it may not be able to learn even a simple functions like an identity function.
