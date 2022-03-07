@@ -51,7 +51,7 @@ The deeper neural networks are constructed by stacking more layers on one anothe
     </ul>
     
   
-The whole block is called one block (layer), which is consists of multiple layers (Conv, BN, ReLU).
+The whole block is called one block (layer), which is consists of multiple layers (Conv, BN, ReLU).<br>
 <a href="https://towardsdatascience.com/residual-blocks-building-blocks-of-resnet-fd90ca15d6ec">Residual blocks building blocks of Resnet</a><br>
 
   
