@@ -33,6 +33,7 @@ class BottleneckBlock(nn.Module):
         # for projection short-cut (same input(x) channels, and downsampling it to channel_size)
         self.shortcut_method = shortcut_method 
         self.shortcut = conv1x1(channel_size, channel_size, stride=stride)
+        
         # activation function
         self.relu = nn.ReLU(inplace=True)
         
@@ -40,7 +41,7 @@ class BottleneckBlock(nn.Module):
         self, 
         x:Tensor
     ) -> Tensor:
-        # shortcut path may be identity short-cut or projection short-cut
+        # shortcut path may be identity short-cut OR projection short-cut
         # identity short-cut
         if self.shortcut_method.lower()=='identity':
             shortcut = x
@@ -52,7 +53,9 @@ class BottleneckBlock(nn.Module):
         else:
             raise ValueError("ResidualBlock only supports identity or projection shortcut")
             
-        # forward path
+        ################
+        # Forward path #
+        ################
         # first layer
         out = self.conv1(x)
         out = self.BN(out)
@@ -61,10 +64,14 @@ class BottleneckBlock(nn.Module):
         out = self.conv2(out)
         out = self.bn2(out)
         out = self.relu(out)
-        # second layer
+        # third layer
         out = self.conv3(out)
         out = self.bn3(out)
-        #out (layers output + shortcut output)
+        
+        ##########
+        # Outout #
+        ##########
+        # output (layers' output + shortcut' output)
         out += shortcut
         out = self.relu(out)
         return out
