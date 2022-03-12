@@ -29,7 +29,7 @@ class BasicBlock(nn.Module):
         self.relu = nn.ReLU(inplace=True)
     
     def forward(self, x:Tensor) -> Tensor:
-        # shortcut path may be identity short-cut or projection short-cut
+        # shortcut path may be identity short-cut OR projection short-cut
         # identity short-cut
         if self.shortcut.lower()=='identity':
             shortcut = x
@@ -39,7 +39,9 @@ class BasicBlock(nn.Module):
         else:
             raise ValueError("ResidualBlock only supports identity or projection shortcut")
             
-        # forward path
+        ################
+        # Forward Path #
+        ################
         # first layer
         out = self.conv1(x)
         out = self.BN(out)
@@ -47,6 +49,10 @@ class BasicBlock(nn.Module):
         # second layer
         out = self.conv2(out)
         out = self.bn2(out)
+        
+        ##########
+        # Output #
+        ##########
         #out (layers output + shortcut output)
         out += shortcut
         out = self.relu(out)
