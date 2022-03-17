@@ -18,14 +18,6 @@ The idea is motivated by the degradation problem (training error increases as de
 
 If identity mappings are optimal, it is easier to make F(x) as 0 than fitting H(x) as x (as suggested by degradation problem).
 
-**Results**<br>
-In this section, we see the performance of residual networks. The models were trained on the 1.28 million training images, and evaluated on the 50,000 validation images. The performance of the networks were evaluated using top-1 error rate.
-
-In the below table, two types of network are mentioned.
-
-**Plain Networks.**<br>
-The deeper neural networks are constructed by stacking more layers on one another without shortcut connections.
-
 <a href="https://arxiv.org/abs/1512.03385">Paper</a><br>
 <a href="https://swethatanamala.github.io/2018/07/09/Summary-of-resnet-paper/">Paper Summary</a><br>
 
