@@ -1,9 +1,3 @@
-### In this repository I'm going to:
-- Implement the `original` architecture of `Basic Block` & `Bottleneck Block` with both Identity and Projection short-cut connection.
-- Using the implemented Blocks to build a simple ResNet.
-
--------
-
 <h1 align="center">Residual Blocks</h1><br>
 
 We can define Neural networks as `Universal function approximators` **F(X) = X** and the accuracy increases with increasing the number of layers.<br>
@@ -63,4 +57,7 @@ The shortcut connections of a residual neural network can be:
 
 <img src="images/The shortcut connections of ResNet.jpg" height="500" width="500" align="center"></img>
 
-<a href="https://www.researchgate.net/publication/339109948_Deep_Residual_Learning_for_Nonlinear_Regression/figures?lo=1">Deep Residual Learning for Nonlinear Regression</a
+<a href="https://www.researchgate.net/publication/339109948_Deep_Residual_Learning_for_Nonlinear_Regression/figures?lo=1">Deep Residual Learning for Nonlinear Regression</a>
+
+
+> #### I'm goinng to implement the `original` architecture of `Basic Block` & `Bottleneck Block` with both Identity and Projection short-cut connection.
