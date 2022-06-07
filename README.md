@@ -1,9 +1,8 @@
 ## In this repository I'm goinng to:
 - Implement the `original` architecture of `Basic Block` & `Bottleneck Block` with both Identity and Projection short-cut connection.
-- Use my implementation to build a simple ResNet12 and train the model usign <a herf="http://www.cs.toronto.edu/~kriz/cifar.html">CIFAR-10 dataset<a/><br><br>
-<img src="data/The structure of ResNet 12.png" align="center" hight="300" width="500"></img>
-
-    
+- Use my implementation to build a simple ResNet 12 and train the model usign <a herf="http://www.cs.toronto.edu/~kriz/cifar.html">CIFAR-10 dataset<a/><br><br>
+<h4 align="left">ResNet 12 architecture</h4>
+<p style="text-align:right;"><img src="data/The structure of ResNet 12.png" hight="300" width="500" title="ResNet 12 architecture"></p>
 --------- 
     
 <h1 align="center">Residual Blocks</h1><br>
